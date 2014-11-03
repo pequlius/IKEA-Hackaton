@@ -19,16 +19,16 @@ void setup() {
   size(400, 300);
   try {
     // Create & Assign the servophidget
-    sp = new AdvancedServoPhidget();
-    sp.openAny();
+//    sp = new AdvancedServoPhidget();
+//    sp.open(302952);
     
     acc = new SpatialPhidget();
-    acc.openAny();
+    acc.open(329068);
     
     println("Waiting for servo");
     // if you do not see this below in the console, your servo phidget is not connected 
     println("Servo ready to go");
-    sp.setEngaged(0, true);
+    //sp.setEngaged(0, true);
     
     println("Waiting for Accelerometer");
     acc.waitForAttachment();
@@ -38,6 +38,21 @@ void setup() {
   } 
   catch(Exception e) {
     println("ERROR - exception called");
+    System.out.println(e);
+  }
+  
+  try {
+    // Create & Assign the servophidget
+    sp = new AdvancedServoPhidget();
+    sp.openAny();
+    println("Waiting for Phidget");
+    sp.waitForAttachment();
+    // if you do not see this below in the console, your phidget is not connected 
+    println("OK ready to go");
+    sp.setEngaged(0, true);
+  } 
+  catch(Exception e) {
+    println("ERROR");
     System.out.println(e);
   }
 }
@@ -65,7 +80,7 @@ void draw() {
   }
 
 }
-
+//
 void stop() {
   try {
     // Create & Assign the servophidget
