@@ -23,7 +23,7 @@ void setup() {
 //    sp.open(302952);
     
     acc = new SpatialPhidget();
-    acc.open(329068);
+    acc.openAny();
     
     println("Waiting for servo");
     // if you do not see this below in the console, your servo phidget is not connected 
