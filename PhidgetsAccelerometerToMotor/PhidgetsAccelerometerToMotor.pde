@@ -23,7 +23,11 @@ void setup() {
 //    sp.open(302952);
     
     acc = new SpatialPhidget();
+<<<<<<< HEAD
     acc.openAny();// if not working try open("serial number")
+=======
+    acc.openAny();
+>>>>>>> origin/master
     
     println("Waiting for servo");
     // if you do not see this below in the console, your servo phidget is not connected 

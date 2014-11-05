@@ -25,7 +25,7 @@ void setup()
   textFont(myFont);
   
   println(arduino.list());
-  arduino = new Arduino(this, arduino.list()[0], 57600);// arduino connected port
+  arduino = new Arduino(this, arduino.list()[5], 57600);// arduino connected port
   for(int i=0;i<3;i++){ arduino.pinMode(pin[i],Arduino.OUTPUT);} //RGB strip connected to arduino
   
 colorMode(RGB, 255);
@@ -48,13 +48,12 @@ void draw()
   
   // display analog inputs
 
-    sensorVal=ik.getSensorValue(2);// 0,1,2 corresponds to the analog input of the phidget to which sensor is connected
-    int sensorVal1=constrain(sensorVal,0,255);
+    sensorVal=ik.getSensorValue(0);// 0,1,2 corresponds to the analog input of the phidget to which sensor is connected
+    int sensorVal1=(int)map(sensorVal,120,500,0,255);
     println(sensorVal1);
     arduino.analogWrite(9,sensorVal1);
-    arduino.analogWrite(10,sensorVal1+10);
-    arduino.analogWrite(11,sensorVal1+20);  
+    arduino.analogWrite(10,0);
+    arduino.analogWrite(11,0);  
     
     
 }
-

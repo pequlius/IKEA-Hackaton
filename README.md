@@ -4,6 +4,7 @@ Welcome to the IKEA-Hackaton!
 In this project you will find code snippets for Arduino and Processing to be used as a starting point in the IKEA Hackaton
 
 Stuff to install in advance:
+
 1. The Processing programming environment version 2 or later:
 https://www.processing.org/
 
